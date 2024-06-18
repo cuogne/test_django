@@ -11,3 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+const toggleButton = document.getElementById('togglePersonList');
+const personList = document.querySelector('.person-list');
+
+toggleButton.addEventListener('click', function() {
+    // check status of personList
+    if (personList.style.display === 'none') {
+        personList.style.display = 'block';
+    } else {
+        personList.style.display = 'none';
+    }
+});

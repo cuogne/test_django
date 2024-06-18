@@ -15,17 +15,30 @@
         {% endif %}
         <form id="personForm" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <div class="form-field">
+                <label for="id_name">Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-field">
+                <label for="id_age">Age:</label>
+                {{ form.age }}
+            </div>
+            <div class="form-field">
+                <label for="id_message">Message:</label>
+                {{ form.message }}
+            </div>
             <input type="submit" value="Submit">
         </form>
 
         <h2>Persons List</h2>
-        <table>
+        <button id="togglePersonList">Show/Hide Person List</button>
+        <table class="person-list">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Age</th>
                     <th>Message</th>
+                    <th>Created At</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -35,6 +48,7 @@
                     <td>{{ person.name }}</td>
                     <td>{{ person.age }}</td>
                     <td>{{ person.message }}</td>
+                    <td>{{ person.created_at }}</td>
                     <td>
                         <form method="post" action="{% url 'delete_person' person.id %}" class="delete-form">
                             {% csrf_token %}

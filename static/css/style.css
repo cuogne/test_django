@@ -108,3 +108,23 @@ tr:hover {
     border-radius: 5px;
     text-align: center;
 }
+
+.person-list {
+    display: none; /* Ẩn danh sách */
+}
+
+#togglePersonList {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#togglePersonList:hover {
+    background-color: #45a049;
+}
